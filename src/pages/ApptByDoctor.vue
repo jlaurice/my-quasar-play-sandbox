@@ -13,6 +13,9 @@
 
     <!-- Select Insurance Plan -->
     <insurance-plan-select-list v-show="isNewPatient" @changePlan="onInsurancePlanChange($event)"></insurance-plan-select-list>
+
+    <!-- Select Office Location -->
+    <office-loc-select-list v-show="plan" @changeLoc="onOfficeLocChange($event)"></office-loc-select-list>
   </div>
 </template>
 
@@ -20,18 +23,21 @@
 <script>
 import DoctorSelectList from '../components/DoctorSelectList.vue'
 import InsurancePlanSelectList from '../components/InsurancePlanSelectList.vue'
+import OfficeLocSelectList from '../components/OfficeLocSelectList.vue'
 
 export default {
   name: 'ApptByDoctor',
   components: {
     'doctor-select-list': DoctorSelectList,
-    'insurance-plan-select-list': InsurancePlanSelectList
+    'insurance-plan-select-list': InsurancePlanSelectList,
+    'office-loc-select-list': OfficeLocSelectList
   },
   data() {
     return {
       patientType: '',
       doctorId: '',
       plan: null,
+      loc: null,
       options: [
         {
           label: 'New Patient',
@@ -61,7 +67,20 @@ export default {
           this.plan.name
         }, id:${this.plan.id}`,
         option
-      );
+      )
+    },
+    onOfficeLocChange(option) {
+      let loc = {
+        id: option.value,
+        name: option.label
+      }
+      this.loc = loc
+      console.log(
+        `Updated composite model with office location selection change.  Loc is - name:${
+          this.loc.name
+        }, id:${this.loc.id}`,
+        option
+      )
     }
   }
 }

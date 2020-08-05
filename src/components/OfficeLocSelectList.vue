@@ -1,5 +1,5 @@
 <template>
-  <div class="q-ma-md">InsuranceZ:
+  <div class="q-ma-md">Location:
     <q-select
       filled
       v-model="model"
@@ -7,7 +7,7 @@
       hide-selected
       fill-input
       input-debounce="0"
-      label="Select Insurance"
+      label="Select Location"
       :options="options"
       @filter="filterFn"
       @filter-abort="abortFilterFn"
@@ -27,26 +27,23 @@
 
 <script>
 export default {
-  name: 'InsurancePlanSelectList',
+  name: 'OfficeLocSelectList',
   data() {
     return {
       model: null,
       options: [],
-      plans: [
+      locations: [
         {
-          id: 100,
-          name: 'AARP MedicareComplete',
-          isPar: false
+          id: 1001,
+          name: 'Office A'
         },
         {
-          id: 110,
-          name: 'Aetna',
-          isPar: true
+          id: 1002,
+          name: 'Office B'
         },
         {
-          id: 111,
-          name: 'Aetna AB',
-          isPar: true
+          id: 1003,
+          name: 'Office C'
         }
       ]
     }
@@ -55,7 +52,7 @@ export default {
   methods: {
     async filterFn(val, update, abort) {
       // call abort() at any time if you can't retrieve data somehow
-      if (this.plans.length === 0) {
+      if (this.locations.length === 0) {
         // if there is no data, fetch and cache it so it can be filtered
         // await this.$axios
         //   .get('https://jsonplaceholder.typicode.com/users')
@@ -65,22 +62,21 @@ export default {
       }
       if (val === '') {
         update(() => {
-          //this.options = this.plans.map(plan => plan.name)
-          this.options = this.plans.map(plan => {
-            return { label: plan.name, value: plan.id }
+          this.options = this.locations.map(loc => {
+            return { label: loc.name, value: loc.id }
           })
         })
-      } else if (this.plans.length === 0) {
+      } else if (this.locations.length === 0) {
         update(() => {
           this.options = []
         })
       } else {
         update(() => {
-          this.options = this.plans
-            .map(plan => {
+          this.options = this.locations
+            .map(loc => {
               return {
-                label: plan.name,
-                value: plan.id
+                label: loc.name,
+                value: loc.id
               }
             })
             .filter(option => {
@@ -97,10 +93,12 @@ export default {
     emitSelectChangeEvt(val) {
       // TODO:JML: Need to replace this with vuex implementation ...
       // See Here: https://www.smashingmagazine.com/2020/01/data-components-vue-js/#emitting-custom-events-share-data-child-parent
-      const planObj = val
-      if (planObj != null) {
-        console.log('Plan selection change was made, plan is : ' + planObj)
-        this.$emit('changePlan', planObj)
+      const locObj = val
+      if (locObj != null) {
+        console.log(
+          'Office Loc selection change was made, location is : ' + locObj
+        )
+        this.$emit('changeLoc', locObj)
       }
     },
 
