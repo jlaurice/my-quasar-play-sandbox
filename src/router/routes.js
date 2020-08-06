@@ -16,7 +16,17 @@ const routes = [
       // route: /
       { path: '', component: () => import('pages/Index.vue') },
       // route: /HelloWorld
-      { path: 'HelloWorld', component: () => import('pages/HelloWorld.vue') }
+      { path: 'HelloWorld', component: () => import('pages/HelloWorld.vue') },
+      // route: /ListView
+      {
+        path: 'ListViewExample',
+        component: () => import('pages/examples/ListViewExample.vue')
+      },
+      // route: /Exercise1
+      {
+        path: 'Exercise1',
+        component: () => import('pages/examples/Exercise1.vue')
+      }
     ]
   },
 

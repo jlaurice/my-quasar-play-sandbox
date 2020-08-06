@@ -42,7 +42,7 @@
                   </q-item-section>
                 </q-item>
                 <q-separator/>
-                <q-item to="/HelloWorld">
+                <q-item clickable tag="a" target="_blank" :href="link">
                   <q-item-section>
                     <q-item-label>Allergists</q-item-label>
                   </q-item-section>
@@ -77,6 +77,38 @@
                 <q-item clickable tag="a" target="_blank" :href="link">
                   <q-item-section>
                     <q-item-label>Adult and Pediatric Allergy, Asthma and Immunology</q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-card-section>
+          </q-card>
+        </q-expansion-item>
+        <q-separator/>
+        <q-expansion-item
+          dense
+          dense-toggle
+          group="somegroup"
+          label="Vue Examples"
+          header-class="text-primary"
+        >
+          <q-card>
+            <q-card-section>
+              <q-list dense>
+                <q-item to="/HelloWorld">
+                  <q-item-section>
+                    <q-item-label>Basic</q-item-label>
+                  </q-item-section>
+                </q-item>
+                <q-separator/>
+                <q-item to="/ListViewExample">
+                  <q-item-section>
+                    <q-item-label>List View</q-item-label>
+                  </q-item-section>
+                </q-item>
+                <q-separator/>
+                <q-item to="/Exercise1">
+                  <q-item-section>
+                    <q-item-label>Exercise 1</q-item-label>
                   </q-item-section>
                 </q-item>
               </q-list>

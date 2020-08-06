@@ -12,7 +12,11 @@
     </div>
 
     <!-- Select Insurance Plan -->
-    <insurance-plan-select-list v-show="isNewPatient" @changePlan="onInsurancePlanChange($event)"></insurance-plan-select-list>
+    <insurance-plan-select-list
+      :doctorId="doctorId"
+      v-show="isNewPatient"
+      @changePlan="onInsurancePlanChange($event)"
+    ></insurance-plan-select-list>
 
     <!-- Select Office Location -->
     <office-loc-select-list v-show="plan" @changeLoc="onOfficeLocChange($event)"></office-loc-select-list>

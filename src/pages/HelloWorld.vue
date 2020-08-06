@@ -19,6 +19,7 @@
         @keyup="onInputKeyup"
         v-autofocus
         v-bind:class="{ 'error' : message.length > 22 }"
+        ref="messageInput"
       >
       <button @click="clearMessage">Clear</button>
 
@@ -112,6 +113,46 @@ export default {
         el.focus()
       }
     }
+  },
+  beforeCreate() {
+    // This is an example of the component's beforeCreate lifecycle hook
+    // This method gets invoked right before your Vue component gets created
+    console.log('Lifecycle Hook - beforeCreate() ')
+  },
+  created() {
+    // This lifecycle hook method gets invoked once the component has virtually been created (ie. created in memory, not yet committed to the UI/view)
+    console.log('Lifecycle Hook - created() ')
+  },
+  beforeMount() {
+    // This lIfecycle hook method gets invoked just before the markup for the component is applied to the UI/view
+    console.log('Lifecycle Hook - beforeMount() ')
+  },
+  mounted() {
+    // This lifecycle hook method gets invoked once the markup for your component has been committed to the UI/view
+    // This one you will use most often when you want some init code to run when your component is first loaded
+    console.log('Lifecycle Hook - mounted() ')
+    console.log(this.$refs)
+    // Example: Here we reference the message input element to do certain things like validation or to give focus
+    //this.$refs.messageInput
+  },
+  beforeUpdate() {
+    // This lifecycle hook method gets invoked just before an update is applied to the component's UI/view
+    // Example: When the clear button is pressed
+    console.log('Lifecycle Hook - beforeUpdate() ')
+  },
+  updated() {
+    // This lifecycle hook method gets invoked when the component's UI/view is updated
+    // Example: When the clear button is pressed
+    console.log('Lifecycle Hook - updated() ')
+  },
+  beforeDestroy() {
+    // This lifecycle hook method gets invoked right before the component is destroyed
+    console.log('Lifecycle Hook - beforeDestroy() ')
+  },
+  destroyed() {
+    // This lifecycle hook method gets invoked when the component is destroyed
+    // Example: When on one page and navigate to another page, the first page will invoke the destroyed hooks on the components
+    console.log('Lifecycle Hook - destroyed() ')
   }
 }
 </script>

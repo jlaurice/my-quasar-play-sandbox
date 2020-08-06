@@ -1,5 +1,5 @@
 <template>
-  <div class="q-ma-md">InsuranceZ:
+  <div class="q-ma-md">Insurance:
     <q-select
       filled
       v-model="model"
@@ -28,6 +28,12 @@
 <script>
 export default {
   name: 'InsurancePlanSelectList',
+  props: {
+    doctorId: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       model: null,
@@ -64,6 +70,11 @@ export default {
         //   })
       }
       if (val === '') {
+        console.log(
+          `Inside InsurancePlanSelectList:filterFn() - Going to retrieve/filter plans for passed-in doctorId parm val: ${
+            this.doctorId
+          }`
+        )
         update(() => {
           //this.options = this.plans.map(plan => plan.name)
           this.options = this.plans.map(plan => {
@@ -107,6 +118,13 @@ export default {
     abortFilterFn() {
       // console.log('delayed filter aborted')
     }
+  },
+  beforeCreate() {
+    // This is an example of the component's beforeCreate lifecycle hook
+    // This method gets invoked right before your Vue component gets created
+    console.log(
+      'Inside InsurancePlanSelectList:beforeCreate() Lifecycle Hook ...'
+    )
   }
 }
 </script>
