@@ -28,9 +28,23 @@
 <script>
 export default {
   name: 'OfficeLocSelectList',
+  props: {
+    doctorId: {
+      type: String,
+      default: ''
+    },
+    plan: {
+      type: Object,
+      default: null
+    },
+    loc: {
+      type: Object,
+      default: null
+    }
+  },
   data() {
     return {
-      model: null,
+      model: this.loc,
       options: [],
       locations: [
         {
@@ -61,6 +75,11 @@ export default {
         //   })
       }
       if (val === '') {
+        console.log(
+          `Inside OfficeLocSelectList:filterFn() - Going to retrieve/filter locs for passed-in parm vals - doctorId: ${
+            this.doctorId
+          }, planId: ${this.planId}`
+        )
         update(() => {
           this.options = this.locations.map(loc => {
             return { label: loc.name, value: loc.id }
@@ -105,6 +124,19 @@ export default {
     abortFilterFn() {
       // console.log('delayed filter aborted')
     }
+  },
+  beforeCreate() {
+    // This is an example of the component's beforeCreate lifecycle hook
+    // This method gets invoked right before your Vue component gets created
+    console.log(
+      'Lifecycle Hook - beforeCreate() - Component:OfficeLocSelectList'
+    )
+  },
+  beforeUpdate() {
+    // This lifecycle hook method gets invoked just before an update is applied to the component's UI/view
+    console.log(
+      'Lifecycle Hook - beforeUpdate() - Component:OfficeLocSelectList'
+    )
   }
 }
 </script>

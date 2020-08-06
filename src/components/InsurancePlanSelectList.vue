@@ -32,11 +32,15 @@ export default {
     doctorId: {
       type: String,
       default: ''
+    },
+    plan: {
+      type: Object,
+      default: null
     }
   },
   data() {
     return {
-      model: null,
+      model: this.plan,
       options: [],
       plans: [
         {
@@ -123,7 +127,13 @@ export default {
     // This is an example of the component's beforeCreate lifecycle hook
     // This method gets invoked right before your Vue component gets created
     console.log(
-      'Inside InsurancePlanSelectList:beforeCreate() Lifecycle Hook ...'
+      'Lifecycle Hook - beforeCreate() - Component:InsurancePlanSelectList'
+    )
+  },
+  beforeUpdate() {
+    // This lifecycle hook method gets invoked just before an update is applied to the component's UI/view
+    console.log(
+      'Lifecycle Hook - beforeUpdate() - Component:InsurancePlanSelectList'
     )
   }
 }
