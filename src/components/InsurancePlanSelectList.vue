@@ -111,7 +111,7 @@ export default {
       const planObj = val
       if (planObj != null) {
         console.log('Plan selection change was made, plan is : ' + planObj)
-        this.$emit('changePlan', planObj)
+        this.$emit('change', planObj)
       }
     },
 

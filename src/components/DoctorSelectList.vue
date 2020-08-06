@@ -88,7 +88,7 @@ export default {
       const doctorId = val + ''
       if (doctorId.length > 0) {
         console.log('Doctor selection change was made, doctor is : ' + doctorId)
-        this.$emit('changeDoctor', doctorId)
+        this.$emit('change', doctorId)
       }
     },
 

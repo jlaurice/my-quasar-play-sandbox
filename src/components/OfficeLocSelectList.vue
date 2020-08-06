@@ -98,7 +98,7 @@ export default {
         console.log(
           'Office Loc selection change was made, location is : ' + locObj
         )
-        this.$emit('changeLoc', locObj)
+        this.$emit('change', locObj)
       }
     },
 

@@ -4,7 +4,7 @@
     <!-- Note:JML: Illustrating component flexability -->
     <!-- I modified this usage to illustrate how child component internally maintains only the selected doctor's id as the component model's value -->
     <!-- Alternatively, could have made it so that the component model's value reflects the entire select option's object (as illustrated in below insurance selection component)-->
-    <doctor-select-list @changeDoctor="doctorId = $event"></doctor-select-list>
+    <doctor-select-list @change="doctorId = $event"/>
 
     <!-- Choose Patient Type (New vs. Existing) -->
     <div v-show="doctorId.length > 0" class="q-pa-lg">I am a
@@ -15,19 +15,19 @@
     <insurance-plan-select-list
       :doctorId="doctorId"
       v-show="isNewPatient"
-      @changePlan="onInsurancePlanChange($event)"
-    ></insurance-plan-select-list>
+      @change="onInsurancePlanChange"
+    />
 
     <!-- Select Office Location -->
-    <office-loc-select-list v-show="plan" @changeLoc="onOfficeLocChange($event)"></office-loc-select-list>
+    <office-loc-select-list v-show="plan" @change="onOfficeLocChange"/>
   </div>
 </template>
 
 
 <script>
-import DoctorSelectList from '../components/DoctorSelectList.vue'
-import InsurancePlanSelectList from '../components/InsurancePlanSelectList.vue'
-import OfficeLocSelectList from '../components/OfficeLocSelectList.vue'
+import DoctorSelectList from 'components/DoctorSelectList.vue'
+import InsurancePlanSelectList from 'components/InsurancePlanSelectList.vue'
+import OfficeLocSelectList from 'components/OfficeLocSelectList.vue'
 
 export default {
   name: 'ApptByDoctor',
