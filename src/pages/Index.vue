@@ -91,15 +91,15 @@
             </q-list>
           </q-btn-dropdown>
           <q-separator vertical/>
-          <q-route-tab name="assists" icon="people_alt" to="/KnowledgeAssists">how we
+          <q-route-tab icon="people_alt" to="/KnowledgeAssists">How we
             <br>help you
           </q-route-tab>
           <q-separator vertical/>
-          <q-route-tab name="services" icon="center_focus_strong" to="/PatientServices">patient
+          <q-route-tab icon="center_focus_strong" to="/PatientServices">Patient
             <br>services
           </q-route-tab>
           <q-separator vertical/>
-          <q-route-tab name="contact" icon="alternate_email" label="CONTACT" to="/Contact"/>
+          <q-route-tab icon="alternate_email" label="Contact" to="/Contact"/>
         </q-tabs>
       </q-toolbar>
     </q-page-sticky>
