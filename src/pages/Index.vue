@@ -70,21 +70,15 @@
     <!-- place QPageSticky at end of page -->
     <q-page-sticky expand position="bottom">
       <q-toolbar class="bg-accent text-white">
-        <q-tabs
-          v-model="tab"
-          dense
-          align="center"
-          class="bg-accent text-white shadow-2"
-          :breakpoint="0"
-        >
+        <q-tabs shrink stretch dense class="bg-accent text-white shadow-2" :breakpoint="0">
           <q-btn-dropdown
+            dense
             auto-close
             stretch
             flat
             stack
-            padding="20px 2px 5px 7px"
             icon="medical_services"
-            label="OUR PHYSICIANS..."
+            label="Our Physicians"
           >
             <q-list>
               <q-item to="/ENTSearch">
@@ -97,19 +91,13 @@
             </q-list>
           </q-btn-dropdown>
           <q-separator vertical/>
-          <q-route-tab
-            name="assists"
-            icon="people_alt"
-            label="HOW WE HELP YOU"
-            to="/KnowledgeAssists"
-          />
+          <q-route-tab name="assists" icon="people_alt" to="/KnowledgeAssists">how we
+            <br>help you
+          </q-route-tab>
           <q-separator vertical/>
-          <q-route-tab
-            name="services"
-            icon="center_focus_strong"
-            label="PATIENT SERVICES"
-            to="/PatientServices"
-          />
+          <q-route-tab name="services" icon="center_focus_strong" to="/PatientServices">patient
+            <br>services
+          </q-route-tab>
           <q-separator vertical/>
           <q-route-tab name="contact" icon="alternate_email" label="CONTACT" to="/Contact"/>
         </q-tabs>
@@ -140,4 +128,8 @@ export default {
 .my-card
   width: 100%
   max-width: 400px
+.my-text-extra-small
+  font-size: 11px;
+.btn-fixed-width
+  width: 50px
 </style>
