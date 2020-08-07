@@ -19,7 +19,7 @@
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-1">
       <q-list>
-        <q-item-label header class="text-grey-8"></q-item-label>
+        <q-item-label header class="text-grey-8">Menu</q-item-label>
         <q-item dense to="/">
           <q-item-section>
             <q-item-label>Home</q-item-label>
@@ -109,6 +109,12 @@
                 <q-item to="/Exercise1">
                   <q-item-section>
                     <q-item-label>Exercise 1</q-item-label>
+                  </q-item-section>
+                </q-item>
+                <q-separator/>
+                <q-item to="/Exercise2">
+                  <q-item-section>
+                    <q-item-label>Exercise 2</q-item-label>
                   </q-item-section>
                 </q-item>
               </q-list>

@@ -66,6 +66,55 @@
         </q-list>
       </q-card-section>
     </q-card>
+
+    <!-- place QPageSticky at end of page -->
+    <q-page-sticky expand position="bottom">
+      <q-toolbar class="bg-accent text-white">
+        <q-tabs
+          v-model="tab"
+          dense
+          align="center"
+          class="bg-accent text-white shadow-2"
+          :breakpoint="0"
+        >
+          <q-btn-dropdown
+            auto-close
+            stretch
+            flat
+            stack
+            padding="20px 2px 5px 7px"
+            icon="medical_services"
+            label="OUR PHYSICIANS..."
+          >
+            <q-list>
+              <q-item to="/ENTSearch">
+                <q-item-section>ENT</q-item-section>
+              </q-item>
+              <q-separator/>
+              <q-item to="/AllergistSearch">
+                <q-item-section>Allergist</q-item-section>
+              </q-item>
+            </q-list>
+          </q-btn-dropdown>
+          <q-separator vertical/>
+          <q-route-tab
+            name="assists"
+            icon="people_alt"
+            label="HOW WE HELP YOU"
+            to="/KnowledgeAssists"
+          />
+          <q-separator vertical/>
+          <q-route-tab
+            name="services"
+            icon="center_focus_strong"
+            label="PATIENT SERVICES"
+            to="/PatientServices"
+          />
+          <q-separator vertical/>
+          <q-route-tab name="contact" icon="alternate_email" label="CONTACT" to="/Contact"/>
+        </q-tabs>
+      </q-toolbar>
+    </q-page-sticky>
   </q-page>
 </template>
 

@@ -16,16 +16,41 @@ const routes = [
       // route: /
       { path: '', component: () => import('pages/Index.vue') },
       // route: /HelloWorld
-      { path: 'HelloWorld', component: () => import('pages/HelloWorld.vue') },
-      // route: /ListView
       {
-        path: 'ListViewExample',
+        path: '/HelloWorld',
+        component: () => import('pages/HelloWorld.vue')
+      },
+      {
+        path: '/ListViewExample',
         component: () => import('pages/examples/ListViewExample.vue')
       },
-      // route: /Exercise1
       {
-        path: 'Exercise1',
+        path: '/Exercise1',
         component: () => import('pages/examples/Exercise1.vue')
+      },
+      {
+        path: '/Exercise2',
+        component: () => import('pages/examples/Exercise2.vue')
+      },
+      {
+        path: '/KnowledgeAssists',
+        component: () => import('pages/KnowledgeAssistsMain.vue')
+      },
+      {
+        path: '/PatientServices',
+        component: () => import('pages/PatientServicesMain.vue')
+      },
+      {
+        path: '/Contact',
+        component: () => import('pages/ContactMain.vue')
+      },
+      {
+        path: '/ENTSearch',
+        component: () => import('pages/ENTSearchMain.vue')
+      },
+      {
+        path: '/AllergistSearch',
+        component: () => import('pages/AllergistSearchMain.vue')
       }
     ]
   },
@@ -38,7 +63,7 @@ const routes = [
       { path: '', component: () => import('pages/ApptMain.vue') },
       // route: /appointment/ApptByDoctor
       {
-        path: 'ApptByDoctor',
+        path: '/ApptByDoctor',
         component: () => import('pages/ApptByDoctor.vue')
       }
     ]
