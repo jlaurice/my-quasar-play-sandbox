@@ -24,8 +24,11 @@ export default {
     ...mapState('general', ['isFetching', 'users'])
   },
   methods: {
-    // This mapActions helper function essentially creates for us a getUsers component function that in turn
-    // dispatchesto the actual action of the store.  It essentially contains a call to this.$store.dispatch("getUsers")
+    // This mapActions helper function essentially creates for us a getUsers function that is
+    // mapped to the getUsers action from our store.
+    // This is achieved because the mapped function that is returned from the helper function
+    // contains code that dispatches to the actual action of the store.
+    // It essentially contains a call to this.$store.dispatch("getUsers")
     ...mapActions('general', ['getUsers'])
   },
   created() {
