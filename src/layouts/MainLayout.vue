@@ -117,6 +117,12 @@
                     <q-item-label>Exercise 2</q-item-label>
                   </q-item-section>
                 </q-item>
+                <q-separator/>
+                <q-item to="/Users">
+                  <q-item-section>
+                    <q-item-label>Users w/Vuex</q-item-label>
+                  </q-item-section>
+                </q-item>
               </q-list>
             </q-card-section>
           </q-card>

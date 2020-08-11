@@ -51,7 +51,10 @@ export default {
         await this.$axios
           .get('https://jsonplaceholder.typicode.com/users')
           .then(response => {
+            // Using timeout to simulate network latency and demonstrate loading state ...
+            //setTimeout(() => {
             this.users = response.data
+            //}, 10)
           })
       }
       if (val === '') {

@@ -33,6 +33,10 @@ const routes = [
         component: () => import('pages/examples/Exercise2.vue')
       },
       {
+        path: '/Users',
+        component: () => import('pages/examples/Users.vue')
+      },
+      {
         path: '/KnowledgeAssists',
         component: () => import('pages/KnowledgeAssistsMain.vue')
       },
