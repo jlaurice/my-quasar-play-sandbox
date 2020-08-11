@@ -23,13 +23,13 @@ export function getUsers({ commit }) {
 
   // And here, we make an HTTP request to an API for a list of users ...
   return axios
-    .get('https://jsonplaceholder.typicode.com/users')
+    .get('https://randomuser.me/api/?nat=us&results=5&seed=abc')
     .then((resp) => {
       // Using timeout to simulate network latency and demonstrate loading state ...
       setTimeout(() => {
         commit('setIsFetching', false)
         // Here, we commit the setUsers mutation which in turn sets the "users" state variable with the returned users collection
-        commit('setUsers', { users: resp.data })
+        commit('setUsers', { users: resp.data.results })
       }, 2500)
     })
     .catch((error) => {

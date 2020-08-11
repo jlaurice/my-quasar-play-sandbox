@@ -5,3 +5,7 @@ export function setUsers(state, { users }) {
 export function setIsFetching(state, bool) {
   state.isFetching = bool
 }
+
+export function setSelectedUserId(state, id) {
+  state.selectedUserId = id
+}

@@ -5,10 +5,11 @@
       <div class="ui text loader">Loading</div>
     </div>
     <ul v-else>
-      <li
-        v-for="(user, index) in users"
-        :key="index"
-      >UserId: {{user.id}}, UserName: {{ user.username }}</li>
+      <li v-for="(user, index) in users" :key="index">
+        <router-link
+          :to="{ name: 'user', params: { id: user.login.uuid }}"
+        >{{ user.name.title }} {{ user.name.first }} {{ user.name.last }}</router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -41,6 +42,11 @@ export default {
 
 <style>
 @import 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css';
+
+.main.container {
+  margin-top: 7em;
+}
+
 li {
   text-transform: capitalize;
 }

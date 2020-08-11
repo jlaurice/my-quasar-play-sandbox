@@ -1,5 +1,6 @@
 export default {
   //
   users: [],
-  isFetching: true
+  isFetching: true,
+  selectedUserId: ''
 }
