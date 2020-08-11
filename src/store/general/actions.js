@@ -18,14 +18,17 @@ export function getUsersOLD({ commit }) {
 }
 
 export function getUsers({ commit }) {
+  // Here, this getUsers action (ie. the containing function) commits a mutation to set the isFetching state to true
   commit('setIsFetching', true)
 
+  // And here, we make an HTTP request to an API for a list of users ...
   return axios
     .get('https://jsonplaceholder.typicode.com/users')
     .then((resp) => {
       // Using timeout to simulate network latency and demonstrate loading state ...
       setTimeout(() => {
         commit('setIsFetching', false)
+        // Here, we commit the setUsers mutation which in turn sets the "users" state variable with the returned users collection
         commit('setUsers', { users: resp.data })
       }, 2500)
     })

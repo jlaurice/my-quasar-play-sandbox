@@ -24,9 +24,13 @@ export default {
     ...mapState('general', ['isFetching', 'users'])
   },
   methods: {
+    // This mapActions helper function essentially creates for us a getUsers component function that in turn
+    // dispatchesto the actual action of the store.  It essentially contains a call to this.$store.dispatch("getUsers")
     ...mapActions('general', ['getUsers'])
   },
   created() {
+    // This lifecycle hook method gets invoked once the component has virtually been created (ie. created in memory, not yet committed to the UI/view)
+    console.log('Lifecycle Hook - created() ')
     this.getUsers()
   }
 }
