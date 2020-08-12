@@ -43,38 +43,17 @@ const DEPARTMENTS = [
 ]
 export default {
   name: 'StaffDirectory',
+  props: {
+    persons: {
+      type: Array,
+      default: null
+    }
+  },
   data() {
     return {
       filterBy: '',
       sortBy: 'department',
-      heading: 'Staff Directory',
-      employeesOLD: [
-        {
-          name: {
-            first: 'john',
-            last: 'smith'
-          },
-          firstName: 'john',
-          lastName: 'smith',
-          photoUrl: 'https://randomuser.me/api/portraits/thumb/women/9.jpg',
-          email: 'john.smith@example.com',
-          phone: '(651)-507-3705',
-          department: 'Engineering'
-        },
-        {
-          name: {
-            first: 'robert',
-            last: 'murphy'
-          },
-          firstName: 'robert',
-          lastName: 'murphy',
-          photoUrl: 'https://randomuser.me/api/portraits/thumb/women/79.jpg',
-          email: 'robert.murphy@example.com',
-          phone: '(925)-667-7604',
-          department: 'Management'
-        }
-      ],
-      employees: []
+      employees: this.persons || []
     }
   },
   computed: {
@@ -114,7 +93,10 @@ export default {
   created() {
     // This lifecycle hook method gets invoked once the component has virtually been created (ie. created in memory, not yet committed to the UI/view)
     console.log('Lifecycle Hook - created() ')
-    this.getUsers()
+    // If persons collection was not passed into the component then make remote api call
+    if (this.employees.length === 0) {
+      this.getUsers()
+    }
   }
 }
 </script>
