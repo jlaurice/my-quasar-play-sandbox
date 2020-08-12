@@ -118,6 +118,12 @@
                   </q-item-section>
                 </q-item>
                 <q-separator/>
+                <q-item to="/staff-directory">
+                  <q-item-section>
+                    <q-item-label>Staff Directory</q-item-label>
+                  </q-item-section>
+                </q-item>
+                <q-separator/>
                 <q-item to="/users">
                   <q-item-section>
                     <q-item-label>Users w/Vuex</q-item-label>

@@ -33,6 +33,11 @@ const routes = [
         component: () => import('pages/examples/Exercise2.vue')
       },
       {
+        name: 'staff-directory',
+        path: '/staff-directory',
+        component: () => import('pages/examples/StaffDirectoryComposite.vue')
+      },
+      {
         name: 'users',
         path: '/users',
         component: () => import('pages/examples/Users.vue')
