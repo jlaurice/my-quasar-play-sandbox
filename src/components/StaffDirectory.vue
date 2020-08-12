@@ -99,13 +99,13 @@ export default {
         .then(response => response.json())
         .then(data => {
           //(this.employees = data.results)
-          this.employees = data.results.map((person, idx) => {
+          this.employees = data.results.map((person, idx, personsArr) => {
             return {
               ...person,
               firstName: person.name.first,
               lastName: person.name.last,
               photoUrl: person.picture.thumbnail,
-              department: DEPARTMENTS[idx]
+              department: DEPARTMENTS[idx % personsArr.length]
             }
           })
         })
