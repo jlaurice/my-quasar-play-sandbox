@@ -34,6 +34,13 @@
 </template>
 
 <script>
+const DEPARTMENTS = [
+  'Engineering',
+  'Management',
+  'Support',
+  'Marketing',
+  'Finance'
+]
 export default {
   name: 'StaffDirectory',
   data() {
@@ -92,12 +99,13 @@ export default {
         .then(response => response.json())
         .then(data => {
           //(this.employees = data.results)
-          this.employees = data.results.map(person => {
+          this.employees = data.results.map((person, idx) => {
             return {
               ...person,
               firstName: person.name.first,
               lastName: person.name.last,
-              photoUrl: person.picture.thumbnail
+              photoUrl: person.picture.thumbnail,
+              department: DEPARTMENTS[idx]
             }
           })
         })
