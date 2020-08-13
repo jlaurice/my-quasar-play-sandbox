@@ -1,8 +1,8 @@
 <template>
   <div>
     <q-separator/>
-    <q-expansion-item group="somegroup" :label="`${label}`" header-class="text-primary">
-      <q-card>
+    <q-expansion-item group="somegroup" :label="`${label}`" header-class="text-white">
+      <q-card class="bg-grey-4">
         <q-card-section>
           <q-list dense>
             <nav-menu-link
@@ -10,6 +10,8 @@
               :label="link.label"
               :navto="link.navto"
               :icon="link.icon"
+              :textcolor="black"
+              :is_child="true"
             />
           </q-list>
         </q-card-section>

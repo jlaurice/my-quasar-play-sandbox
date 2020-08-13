@@ -1,7 +1,12 @@
 <template>
   <div>
     <q-separator/>
-    <q-item :to="`${navto}`">
+    <q-item
+      exact
+      clickable
+      :to="`${navto}`"
+      v-bind:class="[is_child ? 'text-black' : 'text-white']"
+    >
       <q-item-section v-if="icon" avatar>
         <q-icon :name="icon"/>
       </q-item-section>
@@ -29,6 +34,10 @@ export default {
     icon: {
       type: String,
       default: ''
+    },
+    is_child: {
+      type: Boolean,
+      default: false
     }
   }
 }

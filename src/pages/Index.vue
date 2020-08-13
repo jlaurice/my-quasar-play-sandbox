@@ -69,8 +69,8 @@
 
     <!-- place QPageSticky at end of page -->
     <q-page-sticky expand position="bottom">
-      <q-toolbar class="bg-accent text-white">
-        <q-tabs shrink stretch dense class="bg-accent text-white shadow-2" :breakpoint="0">
+      <q-toolbar class="bg-grey-9 text-white">
+        <q-tabs shrink stretch dense class="bg-grey-9 text-white shadow-2" :breakpoint="0">
           <q-btn-dropdown
             dense
             auto-close
