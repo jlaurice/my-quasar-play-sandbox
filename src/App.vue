@@ -1,6 +1,6 @@
 <template>
   <div id="q-app">
-    <router-view />
+    <router-view/>
   </div>
 </template>
 
@@ -9,3 +9,10 @@ export default {
   name: 'App'
 }
 </script>
+
+<style>
+/* These are our own custom defined styles that we would want to be accessible all throughout our app */
+.text-strikethrough {
+  text-decoration: line-through;
+}
+</style>
