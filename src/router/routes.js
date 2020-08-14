@@ -33,6 +33,14 @@ const routes = [
         component: () => import('pages/examples/Exercise2.vue')
       },
       {
+        path: '/todo-list',
+        component: () => import('pages/examples/TodoList.vue')
+      },
+      {
+        path: '/todo-list-with-vuex',
+        component: () => import('pages/examples/TodoListWithVuex.vue')
+      },
+      {
         name: 'staff-directory',
         path: '/staff-directory',
         component: () => import('pages/examples/StaffDirectoryComposite.vue')

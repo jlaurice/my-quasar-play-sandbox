@@ -67,6 +67,16 @@ export default {
           navto: '/Exercise2'
         },
         {
+          label: 'Todo List',
+          icon: '',
+          navto: '/todo-list'
+        },
+        {
+          label: 'Todo List w/Vuex',
+          icon: '',
+          navto: '/todo-list-with-vuex'
+        },
+        {
           label: 'Staff Directory',
           icon: '',
           navto: '/staff-directory'

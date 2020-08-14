@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 // import example from './module-example'
 import general from './general'
+import tasks from './store-tasks'
 
 Vue.use(Vuex)
 
@@ -19,7 +20,8 @@ export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       // general state for app
-      general
+      general,
+      tasks
     },
 
     // enable strict mode (adds overhead!)
