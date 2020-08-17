@@ -1,7 +1,7 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
-module.exports = function(ctx) {
+module.exports = function (ctx) {
   return {
     // https://quasar.dev/quasar-cli/prefetch-feature
     // preFetch: true,
@@ -70,7 +70,7 @@ module.exports = function(ctx) {
       importStrategy: 'auto',
 
       // Quasar plugins
-      plugins: []
+      plugins: ['Dialog']
     },
 
     // animations: 'all', // --- includes all animations
